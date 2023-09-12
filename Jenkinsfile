@@ -15,7 +15,7 @@ pipeline {
         }
         stage ('Build') {
             steps {
-                sh 'mvn pmd:pmd'
+                sh 'mvn pmd:check'
             }
         }
     }
