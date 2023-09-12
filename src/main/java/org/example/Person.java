@@ -5,10 +5,32 @@ import java.time.LocalDate;
 public class Person {
 
   // Change this
-  public String name;
-  public LocalDate birthday;
+  private String name;
+  private LocalDate birthday;
 
-  public int getAge() {
-    return LocalDate.now().getYear() - birthday.getYear();
+  public Person(final String name, final LocalDate birthday) {
+    this.name = name;
+    this.birthday = birthday;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(final String name) {
+    this.name = name;
+  }
+
+  public LocalDate getBirthday() {
+    return birthday;
+  }
+
+  public void setBirthday(final LocalDate birthday) {
+    this.birthday = birthday;
+  }
+
+  public int getAge(final LocalDate date) {
+    final int year = date.getYear();
+    return year - birthday.getYear();
   }
 }
