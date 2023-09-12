@@ -23,7 +23,7 @@
         <version>3.13.0</version>
         <configuration>
           <rulesets>
-            <ruleset>/home/zamir/Projects/messaging/src/main/resources/rules.xml</ruleset>
+            <ruleset>src/main/resources/rules.xml</ruleset>
           </rulesets>
         </configuration>
       </plugin>
