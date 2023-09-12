@@ -5,7 +5,7 @@ pipeline {
         jdk 'jdk8'
     }
     stages {
-        stage('Static Analyse') {
+        stage('Tools') {
             steps {
                 sh '''
                   echo "PATH = ${PATH}"
@@ -13,9 +13,17 @@ pipeline {
                 '''
             }
         }
-        stage ('Build') {
+        stage ('Static Analyse') {
             steps {
                 sh 'mvn pmd:check'
+            }
+        }
+        stage ('Test') {
+            steps {
+                sh 'mvn test'
+            }
+            post {
+                junit 'target/surefire-reports/*.xml'
             }
         }
     }
